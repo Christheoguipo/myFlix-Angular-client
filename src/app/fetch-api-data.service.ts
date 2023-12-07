@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://retro-movie-vault-5ccf6999c998.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
-export class UserRegistrationService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
@@ -18,6 +18,21 @@ export class UserRegistrationService {
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Login user
+  userLogin(userDetails: any): Observable<any> {
+
+    // console.log(userDetails);
+
+    return this.http.post(apiUrl + 'login', userDetails).pipe(
+      tap((result: any) => {
+        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.token);
+
+      }),
       catchError(this.handleError)
     );
   }
@@ -35,51 +50,51 @@ export class UserRegistrationService {
   }
 
 
-  // Register user
-  registerUser(): Observable<any> {
+  // // Register user
+  // registerUser(): Observable<any> {
 
-    const data = {
-      Username: "UsernamePlaceholder",
-      Email: "EmailPlaceholder",
-      Password: "PasswordPlaceholder",
-      Birthday: "BirthdayPlaceholder",
-    };
+  //   const data = {
+  //     Username: "UsernamePlaceholder",
+  //     Email: "EmailPlaceholder",
+  //     Password: "PasswordPlaceholder",
+  //     Birthday: "BirthdayPlaceholder",
+  //   };
 
-    return this.http.post<Response>(apiUrl + 'users', {
-      headers: new HttpHeaders(
-        {
-          "Content-Type": "application/json"
-        }),
-      method: "POST",
-      body: JSON.stringify(data),
+  //   return this.http.post<Response>(apiUrl + 'users', {
+  //     headers: new HttpHeaders(
+  //       {
+  //         "Content-Type": "application/json"
+  //       }),
+  //     method: "POST",
+  //     body: JSON.stringify(data),
 
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
+  //   }).pipe(
+  //     map(this.extractResponseData),
+  //     catchError(this.handleError)
+  //   );
+  // }
 
-  // Login user
-  loginUser(): Observable<any> {
+  // // Login user
+  // loginUser(): Observable<any> {
 
-    const data = {
-      Username: "UsernamePlaceholder",
-      Password: "PasswordPlaceholder",
-    };
+  //   const data = {
+  //     Username: "UsernamePlaceholder",
+  //     Password: "PasswordPlaceholder",
+  //   };
 
-    return this.http.post<Response>(apiUrl + 'users', {
-      headers: new HttpHeaders(
-        {
-          "Content-Type": "application/json"
-        }),
-      method: "POST",
-      body: JSON.stringify(data),
+  //   return this.http.post<Response>(apiUrl + 'login', {
+  //     headers: new HttpHeaders(
+  //       {
+  //         "Content-Type": "application/json"
+  //       }),
+  //     method: "POST",
+  //     body: JSON.stringify(data),
 
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
+  //   }).pipe(
+  //     map(this.extractResponseData),
+  //     catchError(this.handleError)
+  //   );
+  // }
 
   // Get All movies
   getAllMovies(): Observable<any> {
