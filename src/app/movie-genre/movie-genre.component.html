@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ this.movie.Title }}</mat-card-title>
+    <mat-card-subtitle>{{ this.movie.Genre.Name }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ this.movie.Genre.Description }}</p>
+  </mat-card-content>
+  <mat-card-actions fxFlexAlign="end">
+    <button 
+      mat-raised-button
+      (click)="closeDialog()"
+      color="warn"
+    >
+      Close
+    </button>
+</mat-card-actions>
+</mat-card>
