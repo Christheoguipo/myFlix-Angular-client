@@ -3,50 +3,51 @@
     <mat-card-title>Sign Up!</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
-      <mat-form-field>
+    <form id="registration-form" fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Username"
-          placeholder="Username"
           type="text"
           name="Username"
           required
         >
-        </mat-form-field>
-        <mat-form-field>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Password"
           type = "password"
-          placeholder="Password"
           name="Password"
           required
+          autocomplete="new-password"
         >
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Email"
           type = "email"
-          placeholder="Email"
           name="Email"
           required
         >
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Birthday</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Birthday"
           type = "date"
-          placeholder="Birthday"  
           name="Birthday"
         >
       </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions>
-      <button
+  <mat-card-actions fxLayout="column">
+      <button form="registration-form"
         mat-raised-button
         (click)="registerUser()"
         color="primary"
