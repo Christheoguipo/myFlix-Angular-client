@@ -1,0 +1,61 @@
+
+<!-- <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()" >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1 id="app-title">myFlix App</h1>
+    
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        Sidenav content
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+        
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+<div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <h1 class="app-title">myFlix App</h1>    
+        <button mat-stroked-button color="primary" class="menu-button" (click)="navigateProfile()">
+            <span class="menu-item">Profile</span>   
+        </button>
+        <button mat-stroked-button color="warn" class="menu-button" (click)="logout()">
+            <span class="menu-item">Logout</span>   
+        </button>
+    </div>
+
+
+    <div>
+    <!-- style="display: flex;" -->
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div *ngFor="let movie of movies;" fxFlex.xl="20%" fxFlex.lg="20%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%" >
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{movie.Title}}</mat-card-title>
+                        <mat-card-subtitle>Directed by {{movie.Director.Name}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img class="card-image" src={{movie.Imageurl}} alt= {{movie.Title}} />
+                    <mat-card-actions>
+                        <button mat-button color="primary" (click)="openMovieGenreDialog(movie)">
+                            Genre
+                        </button>
+                        <button mat-button color="primary" (click)="openMovieDirectorDialog(movie)">
+                            Director
+                        </button>
+                        <button mat-button color="primary" (click)="openMovieDescriptionDialog(movie)">
+                            Synopsis
+                        </button>
+                        <button mat-icon-button class="favorite-icon" color="warn" aria-label="Heart-shaped favorite icon" (click)="toggleFavorite(movie._id)">
+                            <mat-icon>
+                                {{ isFavoriteMovie(movie._id) ? 'favorite' : 'favorite_border'}}
+                            </mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
