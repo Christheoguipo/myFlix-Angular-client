@@ -1,0 +1,116 @@
+<div >
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <h1 class="app-title">myFlix App</h1>    
+    <button mat-stroked-button color="primary" class="menu-button" (click)="navigateProfile()">
+        <span class="menu-item">Profile</span>   
+    </button>
+    <button mat-stroked-button color="warn" class="menu-button" (click)="logout()">
+        <span class="menu-item">Logout</span>   
+    </button>
+  </div>
+
+  <div>
+    <div>
+      <h3>User Profile</h3>
+      <div>
+
+        <form *ngIf="userData" id="profile-form" fxLayout="column" fxLayoutGap="10px" 
+                fxFlex="40%" fxFlex.lg="40%" fxFlex.md="60%" fxFlex.sm="80%" fxFlex.xs="100%" >
+          <mat-form-field appearance="outline" fxflex="100%">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              [(ngModel)]="userData.Username"
+              type="text"
+              name="Username"
+              required
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [(ngModel)]="userData.Password"
+              type = "password"
+              name="Password"
+              required
+              autocomplete="new-password"
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              [(ngModel)]="userData.Email"
+              type = "email"
+              name="Email"
+              required
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Birthday</mat-label>
+            <input
+              matInput
+              [(ngModel)]="userData.Birthday"
+              type="date"
+              name="Birthday"
+              required
+            >
+          </mat-form-field>   
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <button mat-stroked-button (click)="updateUser()" color="primary">
+            Update
+            </button>
+            <button mat-stroked-button (click)="navigateToMovies()" color="warn">
+              Back
+            </button>
+          </div>
+
+          <!-- <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="userData.Username"
+              placeholder="Username"
+              type="text"
+              name="Username"
+              required
+            >
+            </mat-form-field>
+            <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="userData.Password"
+              type = "password"
+              placeholder="Password"
+              name="Password"
+              required
+            >
+          </mat-form-field> -->
+          <!-- <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="userData.Email"
+              type = "email"
+              placeholder="Email"
+              name="Email"
+              required
+            >
+          </mat-form-field> -->
+          <!-- <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="userData.Birthday"
+              type = "date"
+              placeholder="Birthday"
+              name="Birthday"
+            >
+          </mat-form-field> -->
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
