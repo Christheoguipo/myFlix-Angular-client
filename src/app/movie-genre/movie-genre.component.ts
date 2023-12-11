@@ -1,3 +1,9 @@
+/**
+ * @fileoverview 
+ * Movie Genre Component displays movie genre information in a dialog.
+ * 
+ * @module Movie Genre Dialog
+ */
 import { Component, Inject } from '@angular/core';
 // This import will close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
@@ -19,7 +25,10 @@ export class MovieGenreComponent {
     this.movie = data
   }
 
-
+  /**
+   * @method closeDialog
+   * @description Closes the dialog.
+   */
   closeDialog(): void {
     this.dialogRef.close();
   }
