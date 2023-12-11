@@ -1,0 +1,14 @@
+{
+  "entryPoints": [
+    "./src/app/fetch-api-data.service.ts",
+    "./src/app/movie-card/movie-card.component.ts",
+    "./src/app/movie-description/movie-description.component.ts",
+    "./src/app/movie-director/movie-director.component.ts",
+    "./src/app/movie-genre/movie-genre.component.ts",
+    "./src/app/user-login-form/user-login-form.component.ts",
+    "./src/app/user-profile/user-profile.component.ts",
+    "./src/app/user-registration-form/user-registration-form.component.ts",
+    "./src/app/welcome-page/welcome-page.component.ts"
+  ],
+  "out": "docs/"
+}
