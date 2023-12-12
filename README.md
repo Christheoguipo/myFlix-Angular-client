@@ -1,32 +1,63 @@
-# MyFlixAngularClient
+# MyFlix Angular Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+Welcome to the MyFlix Angular Client repository! This project is an Angular-based web application that serves as the client-side for the [Retro Movie Vault API](https://github.com/Christheoguipo/retro-movie-vault-api).
 
-## Development server
+## Project Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The MyFlix Angular Client is a user-friendly movie database that allows users to browse and explore classic movies. Users can create accounts, log in, and save their favorite movies to their profiles. The application is built using Angular, providing a responsive and dynamic user interface.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User Authentication:** Create an account and log in to access personalized features.
+- **Movie Browser:** Explore classic collection of movies with detailed information.
+- **Favorites:** Save your favorite movies to your profile for quick access.
+- **User Profile:** View and manage your user profile.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To get started with the MyFlix Angular Client, follow these steps:
 
-## Running unit tests
+1. Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/Christheoguipo/myFlix-Angular-client.git
+```
 
-## Running end-to-end tests
+2. Change into the project directory:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+cd myFlix-Angular-client
+```
 
-## Further help
+3. Install dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+```
 
-## AI Usage Declaration
+## Usage
+
+1. Run the development server:
+
+```bash
+ng serve
+```
+
+2. Open your web browser and navigate to http://localhost:4200/ to access the application.
+
+3. Explore the MyFlix Angular Client and enjoy the movie browsing experience!
+
+## Documentation
+
+The documentation for this project is generated using [TypeDoc](https://typedoc.org/). To access the documentation, follow these steps:
+
+1. Navigate to the [docs](./docs) folder in the repository.
+
+2. Open the `index.html` file in your web browser.
+
+The documentation provides detailed information about the code structure of the MyFlix Angular Client.
+
+### AI Usage Declaration
 
 This documentation was generated with the assistance of an artificial intelligence tool, specifically [ChatGPT](https://www.openai.com/gpt), to enhance the efficiency of the documentation creation process.
 
