@@ -54,6 +54,8 @@ ng serve
 
 3. Explore the MyFlix Angular Client and enjoy the movie browsing experience!
 
+You can also access the live app hosted on Github pages: https://christheoguipo.github.io/myFlix-Angular-client/
+
 ## Documentation
 
 The documentation for this project is generated using [TypeDoc](https://typedoc.org/). To access the documentation, follow these steps:
