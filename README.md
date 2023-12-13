@@ -13,6 +13,13 @@ The MyFlix Angular Client is a user-friendly movie database that allows users to
 - **Favorites:** Save your favorite movies to your profile for quick access.
 - **User Profile:** View and manage your user profile.
 
+## Technologies Used
+
+- Angular
+- Angular Material
+- TypeScript
+- Typedoc
+
 ## Installation
 
 To get started with the MyFlix Angular Client, follow these steps:
